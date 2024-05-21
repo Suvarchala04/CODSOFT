@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
     const display = document.getElementById('display');
     const buttons = document.querySelectorAll('.btn');
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (value === '=') {
                 try {
-                    // Evaluate the calculation string
                     currentInput = evaluateCalculation(calculationString).toString();
                     display.textContent = currentInput;
                     calculationString = currentInput;
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         tokens.forEach(token => {
             if (!isNaN(token)) {
-                // Token is a number
                 if (currentOperator) {
                     const a = stack.pop();
                     const b = parseFloat(token);
@@ -81,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     stack.push(parseFloat(token));
                 }
             } else {
-                // Token is an operator
                 currentOperator = token;
             }
         });
